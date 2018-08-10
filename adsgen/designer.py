@@ -1,13 +1,13 @@
 import pygame, sys
 from PIL import Image
 import json
-from adsgen import pygame_input
+from smartad.settings import overlays
 from tkinter import Tk, StringVar, Entry, Button, Label
 from tkinter.filedialog import askopenfilename
 pygame.init()
 # Tk().withdraw()
 
-draws=json.load(open("imageoverlays.json"))
+draws=json.load(open(overlays))
 basicfont = pygame.font.SysFont(None, 48)
 
 
@@ -108,4 +108,4 @@ def design(folder,types):
     if filename:
         screen, px = setup(filename)
         mainLoop(screen, px,filename)
-        json.dump(draws,open("imageoverlays.json",'w'))
+        json.dump(draws,open(overlays,'w'))
