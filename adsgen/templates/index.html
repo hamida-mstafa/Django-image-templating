@@ -1,3 +1,5 @@
 {% load imgtemplate %}
-
-<img src="{% imagefy image="blue.jpg" %}">
+<form >
+    <input placeholder="Your text here" name="last">
+</form>
+<img src="{% imagefy image="blue.jpg" se=last %}" width="50%">

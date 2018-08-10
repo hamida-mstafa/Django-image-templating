@@ -48,7 +48,6 @@ def AskValue():
 
 def setup(path):
     px = pygame.image.load(path)
-    px = pygame.transform.scale(px, (1080, 520))
     screen = pygame.display.set_mode( px.get_rect()[2:] )
     screen.blit(px, px.get_rect())
     pygame.display.flip()
@@ -91,6 +90,7 @@ def mainLoop(screen, px,filename):
                     surface.centery=textrect.centery
                     screen.blit(t,surface)
                 pygame.display.update()
+                json.dump(draws, open(overlays, 'w'))
                 topleft = bottomright = prior = None
             if event.type == pygame.QUIT:
                 pygame.display.quit()
@@ -108,4 +108,3 @@ def design(folder,types):
     if filename:
         screen, px = setup(filename)
         mainLoop(screen, px,filename)
-        json.dump(draws,open(overlays,'w'))

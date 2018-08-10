@@ -123,9 +123,13 @@ STATIC_URL = '/static/'
 
 # CONFIGURATIONS FOR Smart AD
 overlays_json = 'imageoverlays.json'
+
 Images_Folder = os.path.join(BASE_DIR,'banners')
 overlays = os.path.join(BASE_DIR, overlays_json)
+
 Image_Types = (
     ("jpeg files","*.jpg"),
     ("png files","*.png")
 )
+
+Font_location = os.path.join(BASE_DIR, "A.ttf")
